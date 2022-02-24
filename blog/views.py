@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from django.views.generic.base import View
+from django.shortcuts import get_object_or_404, render, redirect
+from django.views.generic import View
 from .forms import PostCreateForm
 # estas son las Vista.
 
@@ -12,7 +12,9 @@ class BlogListView(View):
 
 class BlogCreateView(View):
     def get(self, request, *args, **kwargs):
+        form=PostCreateForm()
         context={
+            'form':form
 
         }
         return render(request, 'blog_create.html', context)   
