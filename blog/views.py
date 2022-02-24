@@ -19,7 +19,7 @@ class BlogCreateView(View):
         }
         return render(request, 'blog_create.html', context)   
 
-    def Post(self, request, *args, **kwargs):
+    def post(self, request, *args, **kwargs):
         context={
 
         }
