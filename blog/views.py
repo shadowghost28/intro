@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render, redirect
 from django.views.generic.base import View
-# Create your views here.
+from .forms import PostCreateForm
+# estas son las Vista.
 
 class BlogListView(View):
     def get(self, request, *args, **kwargs):
@@ -8,3 +9,18 @@ class BlogListView(View):
 
         }
         return render(request, 'blog_list.html', context)
+
+class BlogCreateView(View):
+    def get(self, request, *args, **kwargs):
+        form=PostCreateForm()
+        context={
+            'form':form
+
+        }
+        return render(request, 'blog_create.html', context)   
+
+    def post(self, request, *args, **kwargs):
+        context={
+
+        }
+        return render(request, 'blog_create.html', context)
