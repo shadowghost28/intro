@@ -6,4 +6,4 @@ from .models import Post
 class PostCreateForm(forms.ModelForm):
     class Meta:
         model=Post
-        field=('title','content')  #llevamos este modelo a la Vista 
+        fields=('title','content')  #llevamos este modelo a la Vista 
