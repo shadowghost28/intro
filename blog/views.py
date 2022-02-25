@@ -1,5 +1,5 @@
 from django.shortcuts import get_object_or_404, render, redirect
-from django.views.generic import View, UpdateView
+from django.views.generic.base import View, UpdateView
 from .forms import PostCreateForm
 from .models import Post
 from django.urls import reverse_lazy
