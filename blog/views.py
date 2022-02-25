@@ -1,5 +1,5 @@
 from django.shortcuts import get_object_or_404, render, redirect
-from django.views.generic import View, UpdateView
+from django.views.generic import View, UpdateView, DeleteView
 from .forms import PostCreateForm
 from .models import Post
 from django.urls import reverse_lazy
@@ -60,5 +60,5 @@ class BlogUpdateView(UpdateView):
 
 class BlogDeleteView(DeleteView):
     model=Post
-    templates_name='blog_delete.html'
+    template_name='blog_delete.html'
     success_urls=reverse_lazy('blog:home')        
