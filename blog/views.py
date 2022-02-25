@@ -57,3 +57,8 @@ class BlogUpdateView(UpdateView):
     def get_success_url(self):
         pk = self.kwargs['pk']
         return reverse_lazy('blog:detail', kwargs={'pk':pk})
+
+class BlogDeleteView(DeleteView):
+    model=Post
+    templates_name='blog_delete.html'
+    success_urls=reverse_lazy('blog:home')        
