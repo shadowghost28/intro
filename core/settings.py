@@ -31,7 +31,7 @@ INSTALLED_APPS = [
      'blog',
 
      'tailwind',
-     'theme'
+     'theme',
 ]
 
 TAILWIND_APP_NAME = 'theme'
